@@ -29,4 +29,22 @@ public class IlhaamColab{
 	      return null;
 }
 
+public static Integer firstEvenWithStrongSideNeighbors(int[][] arr) {
+    for (int row = 0; row < arr.length; row++) {
+        for (int col = 1; col < arr[row].length - 1; col++) {
+            int value = arr[row][col];
+
+            if (value % 2 != 0) continue;
+
+            int left = arr[row][col - 1];
+            int right = arr[row][col + 1];
+
+            if (left + right > 17) {
+                return value;
+            }
+        }
+    }
+    return null;
+}
+
 }
