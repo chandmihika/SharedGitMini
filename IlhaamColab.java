@@ -47,4 +47,26 @@ public static Integer firstEvenWithStrongSideNeighbors(int[][] arr) {
     return null;
 }
 
+public static Integer firstOddWithStrongAllNeighbors(int[][] arr) {
+    for (int row = 1; row < arr.length - 1; row++) {
+        for (int col = 1; col < arr[row].length - 1; col++) {
+
+            int value = arr[row][col];
+            if (value % 2 == 0) continue;
+
+            int up    = arr[row - 1][col];
+            int down  = arr[row + 1][col];
+            int left  = arr[row][col - 1];
+            int right = arr[row][col + 1];
+
+            int sum = up + down + left + right;
+
+            if (sum > 33) {
+                return value;
+            }
+        }
+    }
+    return null;
+}
+
 }
