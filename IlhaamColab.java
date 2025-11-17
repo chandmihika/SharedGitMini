@@ -17,4 +17,16 @@ public class IlhaamColab{
 	    return square;
 	  }
 
+	  public static Integer firstEven(int[][] arr) {
+	      for (int row = 0; row < arr.length; row++) {
+	          for (int col = 0; col < arr[row].length; col++) {
+	              int value = arr[row][col];
+	              if (value % 2 == 0) {
+	                  return value;
+	              }
+	          }
+	      }
+	      return null;
+}
+
 }
